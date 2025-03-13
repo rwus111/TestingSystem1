@@ -25,4 +25,11 @@ public class DepartmentController {
         Department departmentCreated = departmentService.createDepartment(department);
         return new ResponseEntity<>(departmentCreated, HttpStatus.CREATED);
     }
+
+    @PutMapping("{id}")
+    public ResponseEntity<Object> updateDepartment(@PathVariable int id, @RequestBody Department department) { // @PathVariable lấy giá trị được truyền ở đường dẫn
+        department.setId(id);
+        Department departmentUpdated = departmentService.updateDepartment(department);
+        return new ResponseEntity<>(departmentUpdated, HttpStatus.OK);
+    }
 }

@@ -8,4 +8,6 @@ public interface IDepartmentService {
     List<Department> getAllDepartments();
 
     Department createDepartment(Department department);
+
+    Department updateDepartment(Department department);
 }
