@@ -7,5 +7,5 @@ import java.util.List;
 public interface IDepartmentService {
     List<Department> getAllDepartments();
 
-    void createDepartment(Department department);
+    Department createDepartment(Department department);
 }

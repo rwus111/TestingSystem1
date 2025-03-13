@@ -18,7 +18,7 @@ public class DepartmentService implements IDepartmentService {
     }
 
     @Override
-    public void createDepartment(Department department) {
-        departmentRepository.save(department);
+    public Department createDepartment(Department department) {
+        return departmentRepository.save(department);
     }
 }

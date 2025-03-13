@@ -3,6 +3,8 @@ package com.vti.testing.controller;
 import com.vti.testing.entity.Department;
 import com.vti.testing.service.IDepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,7 +21,8 @@ public class DepartmentController {
     }
 
     @PostMapping
-    public void createDepartment(@RequestBody Department department){ // @RequestBody: lấy thông tin client truyền trong body
-        departmentService.createDepartment(department);
+    public ResponseEntity<Object> createDepartment(@RequestBody Department department) { // @RequestBody: lấy thông tin client truyền trong body
+        Department departmentCreated = departmentService.createDepartment(department);
+        return new ResponseEntity<>(departmentCreated, HttpStatus.CREATED);
     }
 }
