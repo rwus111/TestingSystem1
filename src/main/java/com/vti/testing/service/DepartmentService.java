@@ -16,4 +16,9 @@ public class DepartmentService implements IDepartmentService {
     public List<Department> getAllDepartments() {
         return departmentRepository.findAll();
     }
+
+    @Override
+    public void createDepartment(Department department) {
+        departmentRepository.save(department);
+    }
 }
