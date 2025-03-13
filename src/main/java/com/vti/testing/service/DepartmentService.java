@@ -26,4 +26,9 @@ public class DepartmentService implements IDepartmentService {
     public Department updateDepartment(Department department) {
         return departmentRepository.save(department);
     }
+
+    @Override
+    public void deleteDepartment(int id) {
+        departmentRepository.deleteById(id);
+    }
 }
