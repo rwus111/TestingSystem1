@@ -20,6 +20,11 @@ public class DepartmentController {
         return departmentService.getAllDepartments();
     }
 
+    // TODO: Homework (path {id})
+    public Department getDepartmentById(){
+        return null;
+    }
+
     @PostMapping
     public ResponseEntity<Object> createDepartment(@RequestBody Department department) { // @RequestBody: lấy thông tin client truyền trong body
         Department departmentCreated = departmentService.createDepartment(department);
