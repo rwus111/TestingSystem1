@@ -20,9 +20,9 @@ public class DepartmentController {
         return departmentService.getAllDepartments();
     }
 
-    // TODO: Homework (path {id})
-    public Department getDepartmentById(){
-        return null;
+    @GetMapping("/{id}")
+    public Department getDepartmentById(@PathVariable int id){
+        return departmentService.getDepartmentById(id);
     }
 
     @PostMapping

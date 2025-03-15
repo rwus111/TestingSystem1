@@ -18,6 +18,11 @@ public class DepartmentService implements IDepartmentService {
     }
 
     @Override
+    public Department getDepartmentById(int id) {
+        return departmentRepository.findById(id).orElse(null);
+    }
+
+    @Override
     public Department createDepartment(Department department) {
         return departmentRepository.save(department);
     }

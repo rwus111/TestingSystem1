@@ -7,6 +7,7 @@ import java.util.List;
 public interface IDepartmentService {
     List<Department> getAllDepartments();
 
+    Department getDepartmentById(int id);
     Department createDepartment(Department department);
 
     Department updateDepartment(Department department);
